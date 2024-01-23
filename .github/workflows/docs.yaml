@@ -1,0 +1,15 @@
+name: Generate helm docs
+on:
+  - pull_request
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+
+    - name: Render helm docs inside the README.md and push changes back to PR branch
+      uses: mintel/helm-docs-action@v0.0.2
+      with:
+        git-push: "true"
