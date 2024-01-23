@@ -10,6 +10,6 @@ jobs:
         ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Render helm docs inside the README.md and push changes back to PR branch
-      uses: shaybentk/helm-docs-action@v0.0.1
+      uses: mintel/helm-docs-action@v0.0.2
       with:
         git-push: "true"
