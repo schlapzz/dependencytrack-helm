@@ -1,4 +1,4 @@
-aaaaaa# Default values for dependency-track.
+# Default values for dependency-track.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 # Since dependency-track 4.0, there are now two separate images. One for frontend, one for the apiserver.
@@ -13,10 +13,10 @@ global:
 frontend:
   enabled: true
   annotations: {}
-  replicaCount: 2
+  replicaCount: 1
   image:
     repository: dependencytrack/frontend
-    tag: 4.6.1
+    tag: 4.10.1
     pullPolicy: IfNotPresent
   # https://github.com/DependencyTrack/frontend/issues/60
   # configmap:
@@ -93,7 +93,7 @@ apiserver:
   replicaCount: 1
   image:
     repository: dependencytrack/apiserver
-    tag: 4.6.3
+    tag: 4.10.1
     pullPolicy: IfNotPresent
   env: []
   persistentVolume:
@@ -170,19 +170,13 @@ ingress:
 
 # -- configuration of postgres
 postgresql:
+  enabled: true
   auth:
     postgresPassword: ""
     username: deptrack
     password: ""
     database: deptrack
-    existingSecret: deptrack-postgresql
-    secretKeys:
-      adminPasswordKey: postgresql-postgres-password
-      userPasswordKey: postgresql-password
-
-  enabled: true
-  primary:
-    containerSecurityContext:
-      enabled: false
-    podSecurityContext:
-      enabled: false
+    # existingSecret: deptrack-postgresql
+    # secretKeys:
+      # adminPasswordKey: postgresql-postgres-password
+      # userPasswordKey: postgresql-password
