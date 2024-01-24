@@ -15,7 +15,8 @@ Dependency-Track is an intelligent Software Supply Chain Component Analysis plat
 ## Source Code
 
 * <https://docs.dependencytrack.org/>
-* <https://github.com/evryfs/helm-charts>
+* <https://github.com/puzzle/dependencytrack-helm>
+* <https://www.puzzle.ch/de/security>
 
 ## Requirements
 
