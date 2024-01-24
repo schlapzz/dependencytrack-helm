@@ -17,7 +17,8 @@ maintainers:
   email: cicd@puzzle.ch
 sources:
  - https://docs.dependencytrack.org/
- - https://github.com/evryfs/helm-charts
+ - https://github.com/puzzle/dependencytrack-helm
+ - https://www.puzzle.ch/de/security
 dependencies:
 - name: postgresql
   version: 13.1.5
